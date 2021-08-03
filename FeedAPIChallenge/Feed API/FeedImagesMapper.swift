@@ -9,14 +9,14 @@
 import Foundation
 
 struct ImagesRoot: Decodable {
-	var items: [Item]
+	fileprivate var items: [Item]
 
 	var feedImages: [FeedImage] {
 		return items.map({ $0.feedImage })
 	}
 }
 
-struct Item: Decodable {
+fileprivate struct Item: Decodable {
 	var id: UUID
 	var description: String?
 	var location: String?
